@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d26f7007ce25c4cab9dfc0d2d0cc3f, type: 3}
+  m_Name: PlayerKnight
+  m_EditorClassIdentifier: 
+  Faction: 0
+  unitPrefab: {fileID: -1168926901848307350, guid: b3513d1fffac04e74b9d1399d9bf9e31, type: 3}

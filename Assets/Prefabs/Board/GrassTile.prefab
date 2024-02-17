@@ -48,10 +48,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3561269451987514545, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3561269451987514545, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3561269451987514545, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3561269451987514545, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5285605668732712876, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
       propertyPath: m_Name
       value: GrassTile
       objectReference: {fileID: 0}
+    - target: {fileID: 8370104769018690318, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3674091473875991746, guid: bce3b9a3f6a2dca4ba65d5c5380fa9af, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -77,10 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27e249f2384ce34eaf1b0ea3a19380b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 0.22061698, g: 0.5283019, b: 0.10466352, a: 0.98039216}
-  offsetColor: {r: 0.330334, g: 0.66666657, b: 0.27044013, a: 0.98039216}
+  TileName: Grassland
   sRenderer: {fileID: 2479801718085759002}
   highlight: {fileID: 3667359190498383423}
+  isWalkable: 1
+  OccupiedUnit: {fileID: 0}
+  baseColor: {r: 1, g: 1, b: 1, a: 0.98039216}
+  offsetColor: {r: 0.29383236, g: 0.8773585, b: 0.5171044, a: 0.98039216}
 --- !u!212 &2479801718085759002 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8370104769018690318, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}

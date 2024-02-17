@@ -53,16 +53,20 @@ PrefabInstance:
       value: RockTile
       objectReference: {fileID: 0}
     - target: {fileID: 8370104769018690318, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6203132303696223906, guid: bce3b9a3f6a2dca4ba65d5c5380fa9af, type: 3}
+    - target: {fileID: 8370104769018690318, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
       propertyPath: m_Color.b
-      value: 0.40080512
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8370104769018690318, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
       propertyPath: m_Color.g
-      value: 0.42138356
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8370104769018690318, guid: 070cdb996fa610b4c8040f107a31cef0, type: 3}
       propertyPath: m_Color.r
-      value: 0.3935563
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -99,5 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8c99dc5f8917449a73b25dfc687b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileName: Stone
   sRenderer: {fileID: 600882245217306914}
   highlight: {fileID: 1790698108087725831}
+  isWalkable: 0
+  OccupiedUnit: {fileID: 0}
