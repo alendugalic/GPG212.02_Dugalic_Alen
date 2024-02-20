@@ -3116,7 +3116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Skeleton Lich
   OccupiedTile: {fileID: 0}
-  Faction: 0
+  Faction: 1
+  health: {fileID: 0}
 --- !u!1 &6821578132132830368
 GameObject:
   m_ObjectHideFlags: 0
