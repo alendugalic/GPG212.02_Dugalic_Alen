@@ -245,6 +245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectedHero: {fileID: 0}
+  heroCount: 4
+  enemyCount: 4
 --- !u!4 &471941055
 Transform:
   m_ObjectHideFlags: 0

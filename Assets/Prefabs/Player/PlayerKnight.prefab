@@ -72,6 +72,8 @@ MonoBehaviour:
   UnitName: Elf Knight
   OccupiedTile: {fileID: 0}
   Faction: 0
+  health: {fileID: 0}
+  MoveRange: 2
 --- !u!1 &236973926380975498
 GameObject:
   m_ObjectHideFlags: 0

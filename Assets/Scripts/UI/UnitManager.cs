@@ -8,8 +8,11 @@ public class UnitManager : MonoBehaviour
     public static UnitManager Instance;
 
     private List<ScriptableUnit> units;
-
+    
     public BasePlayer SelectedHero;
+
+    [SerializeField] private int heroCount;
+    [SerializeField] private int enemyCount;
     private void Awake()
     {
         Instance = this;
@@ -17,7 +20,6 @@ public class UnitManager : MonoBehaviour
     }
     public void SpawnHeroes()
     {
-        var heroCount = 1;
 
         for (int i = 0; i < heroCount; i++)
         {
@@ -33,7 +35,6 @@ public class UnitManager : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        var enemyCount = 1;
 
         for (int i = 0; i < enemyCount; i++)
         {
@@ -44,11 +45,11 @@ public class UnitManager : MonoBehaviour
             randomSpawnTile.SetUnit(spawnedEnemy);
         }
 
-        GameManager.Instance.ChangeState(GameState.HeroesTurn);
+        GameManager.Instance.ChangeState(GameState.HeroesTurn); // need to make the script for what to do during turn
     }
-    private T GetRandomUnit<T>(Faction fanction) where T : BaseUnit
+    private T GetRandomUnit<T>(Faction faction) where T : BaseUnit
     {
-        return (T)units.Where(u => u.Faction == fanction).OrderBy(o => Random.value).First().unitPrefab;
+        return (T)units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().unitPrefab;
     }
 
     public void SetSelectedHero(BasePlayer hero)

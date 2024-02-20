@@ -2967,7 +2967,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Skeleton Knight
   OccupiedTile: {fileID: 0}
-  Faction: 0
+  Faction: 1
+  health: {fileID: 0}
 --- !u!1 &6351637163504113318
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject selectedHeroObject, tileInfoObject, unitInfoObject;
     private void Awake()
     {
-        instance = this; 
+        instance = this;
     }
 
     public void ShowTileInfo(Tile tile)
@@ -25,9 +25,9 @@ public class MenuManager : MonoBehaviour
         tileInfoObject.GetComponentInChildren<TextMeshProUGUI>().text = tile.TileName;
         tileInfoObject.SetActive(true);
 
-        if (tile.OccupiedUnit)
+        if (tile.OccupyingUnit)
         {
-            unitInfoObject.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupiedUnit.UnitName;
+            unitInfoObject.GetComponentInChildren<TextMeshProUGUI>().text = tile.OccupyingUnit.UnitName;
             unitInfoObject.SetActive(true);
         }
     }

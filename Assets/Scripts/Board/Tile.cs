@@ -9,8 +9,9 @@ public abstract class Tile : MonoBehaviour
     [SerializeField] private GameObject highlight;
     [SerializeField] private bool isWalkable;
 
-    public BaseUnit OccupiedUnit;
-    public bool Walkable => isWalkable && OccupiedUnit == null;
+    public BaseUnit OccupyingUnit;
+    private Tile previousOccupiedTile;
+    public bool Walkable => isWalkable && OccupyingUnit == null;
 
     public virtual void Init(int x, int y)
     {
@@ -30,15 +31,16 @@ public abstract class Tile : MonoBehaviour
     {
         if (GameManager.Instance.GameState != GameState.HeroesTurn) return;
 
-        if(OccupiedUnit != null)
+        if(OccupyingUnit != null)
         {
-            if (OccupiedUnit.Faction == Faction.Player) UnitManager.Instance.SetSelectedHero((BasePlayer)OccupiedUnit);
+            if (OccupyingUnit.Faction == Faction.Player) UnitManager.Instance.SetSelectedHero((BasePlayer)OccupyingUnit);
            else
             {
                 if(UnitManager.Instance.SelectedHero != null)
                 {
-                    var enemy = (BaseEnemies)OccupiedUnit;
-                    //enemy.TakeDamage;
+                    var enemy = (BaseEnemies)OccupyingUnit;
+                    //enemy.TakeDamage; need to make the health script to deal damage and give the units range
+                    // need a script to check range
                     Destroy(enemy.gameObject);
                     UnitManager.Instance.SetSelectedHero(null);
                 }
@@ -55,9 +57,18 @@ public abstract class Tile : MonoBehaviour
     }
     public void SetUnit(BaseUnit unit)
     {
-        if (unit.OccupiedTile != null) unit.OccupiedTile.OccupiedUnit = unit;
+        if (unit.OccupiedTile != null)
+        {   
+            previousOccupiedTile = unit.OccupiedTile;
+            unit.OccupiedTile.OccupyingUnit = null;
+        }
+
         unit.transform.position = transform.position;
-        OccupiedUnit = unit;
+        OccupyingUnit = unit;
         unit.OccupiedTile = this;
+    }
+    public void ResetPreviousOccupiedTile()
+    {
+        previousOccupiedTile = null;
     }
 }

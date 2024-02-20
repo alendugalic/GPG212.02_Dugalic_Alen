@@ -10,10 +10,4 @@ public class GrassTile : Tile
         var isOffset = (x + y) % 2 == 1;
         sRenderer.color = isOffset ? offsetColor : baseColor;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
