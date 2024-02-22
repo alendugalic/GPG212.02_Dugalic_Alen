@@ -8,8 +8,7 @@ public class BaseUnit : MonoBehaviour
     public Tile OccupiedTile;
     public Faction Faction;
     public Health health;
-    public int MoveRange;
-
+    public bool HasPerformedAction { get; set; }
     private void Awake()
     {
         health = GetComponent<Health>();

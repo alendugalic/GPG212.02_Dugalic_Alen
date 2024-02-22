@@ -42,5 +42,9 @@ public class MenuManager : MonoBehaviour
         selectedHeroObject.GetComponentInChildren<TextMeshProUGUI>().text = hero.UnitName;
         selectedHeroObject.SetActive(true);
     }
+    public void HideActionButtons()
+    {
+
+    }
 }
                                     

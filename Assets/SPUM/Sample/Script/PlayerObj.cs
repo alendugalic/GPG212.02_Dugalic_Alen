@@ -6,6 +6,7 @@ public class PlayerObj : MonoBehaviour
 {
     public SPUM_Prefabs _prefabs;
     public float _charMS;
+    public static PlayerObj Instance;
     public enum PlayerState
     {
         idle,
@@ -20,7 +21,10 @@ public class PlayerObj : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
     void Update()
     {

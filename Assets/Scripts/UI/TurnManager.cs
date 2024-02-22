@@ -7,11 +7,12 @@ public class TurnManager : MonoBehaviour
 {
     public static TurnManager Instance;
 
-    public int actionPoints;
+    public int actionPoints = 3;
     [SerializeField] private GameObject highlightMove;
     [SerializeField] private GameObject highlightAttack;
-    [SerializeField] private Button Move;
-    [SerializeField] private Button Attack;
+    [SerializeField] private GameObject actionButtonsPanel;
+    [SerializeField] private Button MoveButton;
+    [SerializeField] private Button AttackButton;
     public enum ActionType
     {
         Move,
@@ -19,6 +20,7 @@ public class TurnManager : MonoBehaviour
     }
 
     private ActionType currentAction;
+    private BaseUnit currentUnit;
 
     private void Awake()
     {
@@ -27,9 +29,20 @@ public class TurnManager : MonoBehaviour
             Instance = this;
         }
     }
+    public void ShowActionButtons()
+    {
+        actionButtonsPanel.SetActive(true);
+        MoveButton.interactable = true;
+        AttackButton.interactable = true;
+
+        MoveButton.onClick.AddListener(OnMoveButtonClick);
+        AttackButton.onClick.AddListener(OnAttackButtonClick);
+    }
+
 
     public void StartUnitAction(BaseUnit unit, ActionType action)
     {
+        currentUnit = unit;
         currentAction = action;
 
         switch (currentAction)
@@ -40,17 +53,39 @@ public class TurnManager : MonoBehaviour
             case ActionType.Attack:
                 HighlightValidAttackTiles(unit);
                 break;
-              
+
         }
     }
 
     private void HighlightValidMoveTiles(BaseUnit unit)
     {
-        
+       
     }
 
     private void HighlightValidAttackTiles(BaseUnit unit)
     {
-      
+        
+    }
+
+    private void OnMoveButtonClick()
+    {
+        actionPoints--;
+        
+        ResetActionState();
+        actionButtonsPanel.SetActive(false);
+    }
+
+    private void OnAttackButtonClick()
+    {  
+        actionPoints--;
+       
+        ResetActionState();
+        actionButtonsPanel.SetActive(false);
+    }
+
+    private void ResetActionState()
+    {
+        currentUnit = null;
+        currentAction = ActionType.Move; 
     }
 }

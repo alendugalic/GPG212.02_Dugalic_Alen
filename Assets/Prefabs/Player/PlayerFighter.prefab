@@ -4654,6 +4654,7 @@ GameObject:
   - component: {fileID: 7444838692575225957}
   - component: {fileID: 880495157807992509}
   - component: {fileID: 3542574566183076664}
+  - component: {fileID: 4096559042198047323}
   m_Layer: 5
   m_Name: PlayerFighter
   m_TagString: Untagged
@@ -4716,6 +4717,23 @@ MonoBehaviour:
   UnitName: Elf Sword Dancer
   OccupiedTile: {fileID: 0}
   Faction: 0
+  health: {fileID: 0}
+--- !u!114 &4096559042198047323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894519163112856961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ba1227b45894e71b2bccaabc54001c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabs: {fileID: 0}
+  _charMS: 0
+  _playerState: 0
+  _goalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &5934145255946173168
 GameObject:
   m_ObjectHideFlags: 0
